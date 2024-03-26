@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hummingbird - Discover birds effortlessly, connect with nature deeply.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(149, 200, 244); /* Set background color to blue */
+            color: #000; /* Setting text color to black */
+            font-family: Baskerville, serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #000; /* Setting text color to black */
+            font-size: 48px; /* Adjust the font size as needed */
+        }
+
+        p.title {
+            text-align: center;
+            color: #000; /* Setting text color to black */
+            font-size: 22px; /* Adjust the font size as needed */
+            font-family: Baskerville, serif; /* Apply the same font-family as h1 */
+            font-weight: bold; /* Make the text bold */
+            margin-top: 10px; /* Add margin top for spacing */
+        }
+       
+
+        p {
+            text-align: justify;
+            color: #000; /* Setting text color to black */
+            font-size: 20px; /* Adjust the font size as needed */
+            line-height: 1.6; /* Adjust the line height for better readability */
+        }
+
+        ul, li {
+            font-size: 18px; /* Adjust the font size of list items */
+            color: #000; /* Setting text color to black */
+        }
+        .pitch-img {
+            display: block;
+            margin: 0;
+            max-width: 75px; /* Set max-width for the image */
+            height: auto;
+            position: absolute; /* Set position to absolute */
+            top: 40px; /* Position at the top */
+            left: 800px; /* Position at the left */
+        }
+        .demo-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .demo-link a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .pitch-text {
+            margin-top: 50px; /* Add top margin to move the text down */
+        }
+        .center-image {
+            text-align: center;
+            margin-top: 50px; /* Adjust top margin as needed */
+        }
+        .center-image img {
+            max-width: 100%; /* Ensure the image doesn't exceed its container width */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Remove any inline spacing */
+            margin: 0 auto; /* Center horizontally */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hummingbird</h1>
+        <p class="title">Discover birds effortlessly, connect with nature deeply.</p> <!-- New sentence added -->
+        <img class="pitch-img" src="{{ url_for('static', filename = 'images/HummingbirdLogo.png') }}" alt="Hummingbird Logo"> <!-- Updated image source -->
+        <div class="center-image">
+            <img src="{{ url_for('static', filename = 'images/design.png') }}" alt="Design Image">
+        <div class="demo-link">
+            <a href="demo">Click here to learn more</a>
+        </div>
+    </div>
+</body>
+</html>

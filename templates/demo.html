@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hummingbird Demo</title>
+    <style>
+        body {
+            font-family: Baskerville, serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(149, 200, 244); /* Set background color to blue */
+            color: #000; /* Setting text color to black */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #000; /* Setting text color to black */
+        }
+        h3 {
+            font-size: 24px; /* Make the font size larger for the "Creation Process" heading */
+            margin-top: 20px; /* Add margin at the top for spacing */
+        }
+        p {
+            text-align: justify;
+            color: #000; /* Setting text color to black */
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        ol {
+            padding-left: 20px; /* Add left padding to the ordered list */
+        }
+        strong {
+            font-weight: bold; /* Make the titles bold */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hummingbird</h1>
+        <h2>Our Machine Learning Model</h2>
+        <form action="/demo" method="post" enctype="multipart/form-data">
+            {{form.hidden_tag()}}
+            {{form.file()}}
+            {{form.submit()}}
+        </form>
+        <h3>Creation Process</h3>
+        <p><strong>Data Exploration and Preparation:</strong><br>
+            - Explored the dataset directory structure to understand the organization of the data.<br>
+            - Loaded the class names by extracting directory names from the training dataset.<br>
+            - Visualized random images from different classes to get an understanding of the data.
+        </p>
+        <p><strong>Data Preprocessing:</strong><br>
+            - Loaded and processed images, including resizing and rescaling.<br>
+            - Created data generators using ImageDataGenerator to load images from directories and apply data augmentation techniques like rescaling.
+        </p>
+        <p><strong>Model Architecture:</strong><br>
+            - Utilized the pre-trained model InceptionResNetV2 as the base model for feature extraction.<br>
+            - Froze the base model's layers to prevent them from being trained again.<br>
+            - Added a global average pooling layer to reduce the spatial dimensions of the features.<br>
+            - Added a dense output layer with softmax activation for classification.
+        </p>
+        <p><strong>Model Compilation and Training:</strong><br>
+            - Compiled the model with Adam optimizer.<br>
+            - Fit the model for training, specifying training and defined number of epochs.<br>
+            - Evaluated the model performance on the test data.<br>
+            - Saved the trained model in the native Keras format for future use.
+        </p>
+        <p><strong>Model Loading and Prediction:</strong><br>
+            - Loaded the saved model using TensorFlow/Keras.<br>
+            - Defined a function to predict and plot a single image using the loaded model.
+        </p>
+        <p>Overall, this CNN model was created by leveraging transfer learning with a pre-trained InceptionV3 model, followed by fine-tuning on the specific dataset. Data augmentation techniques were applied during training to improve model generalization, and the final model was saved for deployment and future use.</p>
+    </div>
+</body>
+</html>
